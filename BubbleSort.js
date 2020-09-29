@@ -36,7 +36,7 @@ function bubbleSort3(arr) {
     return arr;
 }
 let arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];
-console.log(bubbleSort1(arr));
-console.log(bubbleSort2(arr));
-console.log(bubbleSort3(arr));
+console.log(bubbleSort1(arr.slice(0)));
+console.log(bubbleSort2(arr.slice(0)));
+console.log(bubbleSort3(arr.slice(0)));
 //[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50];

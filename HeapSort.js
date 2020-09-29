@@ -22,5 +22,5 @@ function heapAdjust(arr, start, end) {
     return arr;
 }
 let arr = [91,60,96,13,35,65,46,65,10,30,20,31,77,81,22];
-console.log(heapSort(arr));
+console.log(heapSort(arr.slice(0)));
 //[10, 13, 20, 22, 30, 31, 35, 46, 60, 65, 65, 77, 81, 91, 96]
