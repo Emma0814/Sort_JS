@@ -1,26 +1,25 @@
 function heapSort(array) {
-    let len = array.length;
-    for (let i = Math.floor(len / 2) - 1; i >= 0; i--)
-        heapAdjust(array, i, len);
-    for (let i = len - 1; i >= 1; i--) {
+    for (let i = Math.floor(array.length / 2) - 1; i >= 0; i--)
+        heapAdjust(array, i, array.length - 1);
+    for (let i = array.length - 1; i >= 1;) {
         [array[0], array[i]] = [array[i], array[0]]
-        heapAdjust(array, 0, --len);
+        heapAdjust(array, 0, --i);
     }
     return array;
 }
-function heapAdjust(arr, x, len) {
-    let leftChild = 2 * x + 1;
-    let rightChild = 2 * x + 2;
-    let largest = x;
-    let temp;
-    if (l < len && arr[l] > arr[largest])
-        largest = l;
-    if (r < len && arr[r] > arr[largest])
-        largest = r;
-    if (largest != x) {
-        [array[x], array[largest]] = [array[largest], array[x]]
-        heapAdjust(arr, largest, len);
-    }
+function heapAdjust(arr, start, end) {
+    let temp = arr[start];
+    for (let i = 2 * start + 1; i <= end;) {
+		if (i < end && arr[i] < arr[i + 1])
+			i++;
+		if (temp >= arr[i])
+			break;
+		arr[start] = arr[i];
+		start = i;
+		i = i * 2 + 1;
+	}
+	arr[start] = temp;
+    return arr;
 }
 let arr = [91,60,96,13,35,65,46,65,10,30,20,31,77,81,22];
 console.log(heapSort(arr));
