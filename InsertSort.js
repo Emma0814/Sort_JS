@@ -11,10 +11,18 @@ function insertionSort(array) {
 function insertionSort2(array) {
     for (let i = 1; i < array.length; i++) {
         const key = array[i];
-        let j = i - 1;
-        while (j >= 0 && array[j] > key)
-            array[j + 1] = array[j--];
-        array[j + 1] = key;
+        let left = 0;
+        let right = i - 1;
+        while (left <= right) {
+            let mid = parseInt((left + right) / 2);
+            if (key < array[mid])
+                right = middle - 1;
+            else
+                left = middle + 1;
+        }
+        for (let j = i - 1; j >= left; j--)
+            array[j + 1] = array[j];
+        array[left] = key;
     }
     return array;
 }
