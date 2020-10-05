@@ -6,7 +6,7 @@ function selectionSort(arr) {
         if (i != min)
             [arr[i], arr[min]] = [arr[min], arr[i]];
     }
-  return arr;
+    return arr;
 }
 let arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];
 console.log(selectionSort(arr.slice(0)));
